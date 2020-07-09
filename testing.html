@@ -1,0 +1,28 @@
+<html>
+<head>
+   <script language="javascript" type="text/javascript">
+   var button = document.getElementById("mBlack"),
+   count = 0;
+   button.onclick = function() {
+   count += 1;
+   button.innerHTML = "Click me: " + count;
+};
+   function testJS() {
+    var b = document.getElementById('name').value,
+        url = 'file:///C:/Users/parva/Desktop/demo/ShoppingCart/next.html?name='' + encodeURIComponent(b);
+
+    document.location.href = url;
+}
+   </script>
+</head>
+
+<body>
+
+<form name="form1" action="next.html" method="get">
+name:<input type ="text" id="name" name="n">
+<input type="submit" value="next" >
+<button type="button" id="print" onClick="testJS()"> Print </button>
+</form>
+
+</body>
+</html>

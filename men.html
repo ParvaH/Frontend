@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>LeShop Men</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="stylebasic.css">
+<script language="javascript" type="text/javascript"src="cart.js"></script>
+</head>
+<body>
+<form method = "post" action="checkout.html" name="myForm" >
+<div class="header">
+  <h1>LeShop</h1>
+  <p>The place to shop!</p>
+</div>
+
+<div class="navbar">
+  <a href="home.html">Home</a>
+  <a href="men.html">Men</a>
+  <a href="women.html">Women</a>
+  <a href="checkout.html" class="right">Checkout</a>
+</div>
+	
+  <div class="main">
+    
+	<div class="row">
+		<div class="side">
+			<div class="card">
+				<img src="blue_shirt.png" alt="Blue T-Shirt" style="image">
+				<h1>Blue T-Shirt</h1>
+				<p class="price">INR 200</p>
+				<p>Blue T-Shirt. Super comfy shirt. Lorem shirtum ipsum shirtum.</p>
+				<p><button id = "mBlue">Add to Cart</button></p><br></div>
+			<div class="card">
+				<img src="green_shirt.png" alt="Green T-Shirt" style="image">
+				<h1>Green T-Shirt</h1>
+				<p class="price">INR 200</p>
+				<p>Green T-Shirt. Super comfy shirt. Lorem shirtum ipsum shirtum.</p>
+				<p><button id = "mGreen">Add to Cart</button></p><br> </div>
+			<div class="card">
+				<img src="grey_shirt.png" alt="Grey T-Shirt" style="image">
+				<h1>Grey T-Shirt</h1>
+				<p class="price">INR 200</p>
+				<p>Grey T-Shirt. Super comfy shirt. Lorem shirtum ipsum shirtum.</p>
+				<p><button id = "mGrey" onClick ="updateCart()">Add to Cart</button></p><br></div>	
+			</div>
+		</div>
+			<div class="row">
+		<div class="side">
+			<div class="card">
+				<img src="yellow_shirt.png" alt="Yellow T-Shirt" style="image">
+				<h1>Blue T-Shirt</h1>
+				<p class="price">INR 200</p>
+				<p>Yellow T-Shirt. Super comfy shirt. Lorem shirtum ipsum shirtum.</p>
+				<p><button id = "mYellow">Add to Cart</button></p><br></div>
+			<div class="card">
+				<img src="pink_shirt.png" alt="Pink T-Shirt" style="image">
+				<h1>Pink T-Shirt</h1>
+				<p class="price">INR 200</p>
+				<p>Pink T-Shirt. Super comfy shirt. Lorem shirtum ipsum shirtum.</p>
+				<p><button id = "mPink">Add to Cart</button></p><br> </div>
+			<div class="card">
+				<img src="black_shirt.png" alt="Black T-Shirt" style="image">
+				<h1>Black T-Shirt</h1>
+				<p class="price">INR 200</p>
+				<p>Black T-Shirt. Super comfy shirt. Lorem shirtum ipsum shirtum.</p>
+				<p><button id = "mBlack" onClick = "testJS()">Add to Cart</button></p><br></div>	
+			</div>
+		</div>
+   
+    <div class="footer">
+			<a href="checkout.html">Checkout</a>
+	</div>
+</form>
+<script>
+function testJS() {
+    var b = document.getElementById('mBlack').value,
+        url = 'checkout.htm?name=' + encodeURIComponent(b);
+
+    document.location.href = url;
+}
+</script>
+</body>
+</html>

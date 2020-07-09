@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+  padding: 5px 0 0 0;
+  background-image: url('header.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+  }
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-style: solid;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  opacity: 0.9;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<h1 style ="text-align:left;color:white">LeShop</h1>
+
+<div class="container">
+  <form method = "post" action="Success.html" name="
+  
+  
+  " onsubmit= "return(validate());" >
+     <div class="row">
+      <h3 style="text-align:center">New User SignUp</h3>
+    <div class="row">
+	<label for="fname">First Name</label>
+    <input type="text" name="personfname" placeholder="Your First Name" required>
+	<label for="fname">Last Name</label>
+    <input type="text" name="personlname" placeholder="Your First Name" required>
+	<label for="EMail">Mobile Number</label>
+    <input type="text" name="Mob" placeholder="Mobile Number" required>	
+	<label for="EMail">Email</label>
+    <input type="text" name="EMail" placeholder="Email" required>
+	<label for="EMail">Address</label>
+	<input type="text" name="Address" placeholder="Address" required>
+	<label for="EMail">Zip</label>
+	<input type="text" name="Zip" placeholder="Zip" required>
+    <label for="country">Country</label>
+    <select id="country" name="country">
+	  <option value="-1" selected>[choose yours]</option>
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+	  <option value="india">India</option>
+    </select>
+	<label for="username">Username</label>
+	<input type="text" name="username" placeholder="Username" required>
+	<label for="password">Create Password</label>
+    <input type="password" name="password" placeholder="New Password" required>
+	<label for="password">Re enter password</label>
+	<input type="password" name="repassword" placeholder="Repeat Password" required><br><br>
+    <input type="submit" align = "center" value="Signup">
+  </form>
+</div>
+</body>
+<script type="text/javascript">
+function validate()
+{
+	if( document.myForm.personfname.value == "" )
+	{
+		alert( "Please provide your first name!" );
+		document.myForm.personfname.focus() ; 
+		return false;
+	}	
+	if( document.myForm.personlname.value == "" )
+	{
+		alert( "Please provide your last name!" );
+		document.myForm.personlname.focus() ; 
+		return false;
+	}
+	var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.co.in$/;
+
+	if( document.myForm.EMail.value == ""  || reg.test(document.myForm.EMail.value) == false)
+	{
+		alert( "Please provide Email in name@domain.co.in format!" ); 
+		document.myForm.EMail.focus() ;
+		return false;
+	}
+	if( document.myForm.username.value !="admin" )
+	{
+		alert( "Invalid user!" );
+		document.myForm.username.focus() ;
+		return false;
+	}
+	
+    if( document.myForm.Mob.value == "" ||
+	isNaN( document.myForm.Mob.value ) ||
+	document.myForm.Mob.value.length != 10 ) 
+	{
+		alert( "Please provide valid mobile number of length 10" );
+		document.myForm.Mob.focus() ;
+		return false;
+	}
+	
+	if( document.myForm.Address.value == "")
+	{
+		alert( "Please dont leave Address as blank" );
+		document.myForm.Address.focus() ;
+		return false; 
+	}
+	if( document.myForm.Zip.value == "" ||
+	isNaN( document.myForm.Zip.value ) ||
+	document.myForm.Zip.value.length != 6 )
+	{ 
+		alert( "Please provide a zip in the format 123456." );
+		document.myForm.Zip.focus() ;
+		return false;
+	}
+	if( document.myForm.Country.value == "-1" ) 
+	{
+		alert( "Please provide your country!" );
+		return false;
+	}
+	
+	if( document.myForm.password.value !="admin" )
+	{
+		alert( "Invalid Password!" );
+		document.myForm.password.focus() ;
+		return false;
+	}
+	
+	if( document.myForm.repassword.value !="admin" )
+	{
+		alert( "Invalid Password!" );
+		document.myForm.repassword.focus() ;
+		return false;
+	}
+
+	return( true );
+}
+</html>
